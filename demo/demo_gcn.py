@@ -7,27 +7,14 @@ import flax.linen
 from jax_gnn.utils.jax_utils import find_params_by_name
 
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
-# from tf_geometric.utils import tf_utils
-# import tensorflow as tf
+
 import jax_gnn as jg
-import jax_sparse as jsp
-# from tqdm import tqdm
-# import time
+
 import jax.numpy as jnp
 import jax
 import optax
 
-# data = jnp.array(
-#     [[0, 2],
-#     [0, 3],
-#     [0, 2],
-#     [0, 3]]
-# )
-# @jax.jit
-# def test():
-#     return jnp.unique(data, axis=0, return_inverse=True)
-# print(test())
-# asdfasdf
+
 
 
 graph, (train_index, valid_index, test_index) = jg.datasets.CoraDataset().load_data()
