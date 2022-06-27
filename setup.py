@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 setup(
     name="jax_gnn",
     python_requires='>3.5.0',
-    version="0.0.1",
+    version="0.0.2",
     author="Jun Hu",
     author_email="hujunxianligong@gmail.com",
     packages=find_packages(
@@ -22,8 +22,10 @@ setup(
         ]
     ),
     install_requires=[
-        "jax >= 0.3.0",
-        "jax_sparse >= 0.0.1",
+        "flax",
+        "optax",
+        "jax >= 0.3.13",
+        "jax_sparse >= 0.0.2",
         "keras >= 2.7.0",
         "networkx >= 2.1",
         "scipy >= 1.1.0",

@@ -85,6 +85,10 @@ class PlanetoidDataset(DownloadableDataset):
             train_index = range(len(ally) - 500)
             valid_index = range(len(ally) - 500, len(ally))
 
+        train_index = np.array(train_index)
+        valid_index = np.array(valid_index)
+        test_index = np.array(test_index)
+
         x = np.array(features.todense()).astype(np.float32)
         inv_sum_x = 1.0 / np.sum(x, axis=-1, keepdims=True)
         inv_sum_x[np.isnan(inv_sum_x)] = 1.0

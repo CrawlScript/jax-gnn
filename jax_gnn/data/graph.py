@@ -5,6 +5,7 @@ import warnings
 # import tensorflow as tf
 # import tf_sparse as tfs
 import numpy as np
+import jax
 import jax.numpy as jnp
 import jax_sparse as jsp
 
@@ -180,6 +181,14 @@ class Graph(object):
             edge_index=convert_to_jax(self.edge_index),
             y=convert_to_jax(self.y),
             edge_weight=convert_to_jax(self.edge_weight)
+        )
+
+    def device_put(self):
+        return Graph(
+            jax.device_put(convert_to_jax(self.x)),
+            edge_index=jax.device_put(convert_to_jax(self.edge_index)),
+            y=jax.device_put(convert_to_jax(self.y)),
+            edge_weight=jax.device_put(convert_to_jax(self.edge_weight))
         )
 
     # def _convert_data_to_tensor(self, keys):

@@ -13,6 +13,7 @@ import jax.numpy as jnp
 from jax_gnn.utils.jax_utils import convert_to_jax
 
 
+
 def convert_edge_index_to_edge_hash(edge_index, num_nodes=None):
     # edge_index_is_tensor = tf.is_tensor(edge_index)
     num_nodes_is_none = num_nodes is None
